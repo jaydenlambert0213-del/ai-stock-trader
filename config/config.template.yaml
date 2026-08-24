@@ -1,0 +1,86 @@
+# Configuration template for AI Stock Trader
+# Copy this file to config/config.yaml and fill in your settings
+
+trading:
+  # List of symbols to trade
+  symbols:
+    - AAPL
+    - MSFT
+    - GOOGL
+    - AMZN
+    - TSLA
+  
+  # Initial capital for trading
+  initial_capital: 100000
+  
+  # Maximum position size as percentage of portfolio (0.05 = 5%)
+  max_position_size: 0.05
+  
+  # Stop loss percentage
+  stop_loss_percent: 2.0
+  
+  # Daily loss limit as percentage (will stop trading if exceeded)
+  daily_loss_limit: 5.0
+
+indicators:
+  # RSI settings
+  rsi_period: 14
+  rsi_oversold: 30
+  rsi_overbought: 70
+  
+  # MACD settings
+  macd_fast: 12
+  macd_slow: 26
+  macd_signal: 9
+  
+  # Bollinger Bands settings
+  bollinger_period: 20
+  bollinger_std: 2
+
+ai_engine:
+  # Minimum confidence threshold for trades (0.6 = 60%)
+  min_confidence: 0.6
+  
+  # Trend strength threshold
+  trend_threshold: 0.55
+
+risk_management:
+  # Use trailing stop loss
+  use_trailing_stop: true
+  
+  # Trailing stop percentage
+  trailing_stop_percent: 1.5
+  
+  # Take profit percentage
+  take_profit_percent: 5.0
+  
+  # Maximum number of open positions
+  max_positions: 5
+  
+  # Minimum risk/reward ratio
+  min_risk_reward: 1.5
+
+trading_hours:
+  # US Market trading hours (9:30 AM - 4:00 PM EST)
+  start_hour: 9
+  start_minute: 30
+  end_hour: 16
+  end_minute: 0
+
+backtesting:
+  # Initial capital for backtesting
+  initial_capital: 100000
+  
+  # Backtesting date range
+  start_date: "2023-01-01"
+  end_date: "2024-01-01"
+  
+  # Trading commission (0.001 = 0.1%)
+  commission: 0.001
+  
+  # Slippage (0.0005 = 0.05%)
+  slippage: 0.0005
+
+logging:
+  level: INFO
+  file: logs/trading.log
