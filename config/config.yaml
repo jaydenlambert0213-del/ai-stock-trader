@@ -1,0 +1,128 @@
+# AI Stock Trader Configuration
+
+trading:
+  # Initial capital for trading
+  initial_capital: 100000
+  
+  # Maximum position size as percentage of portfolio
+  max_position_size: 0.05  # 5% per position
+  
+  # Stop-loss percentage
+  stop_loss_percent: 2.0
+  
+  # Daily loss limit (stop trading if exceeded)
+  daily_loss_limit: 5.0
+  
+  # Stocks to monitor and trade
+  symbols:
+    - AAPL
+    - GOOGL
+    - MSFT
+    - AMZN
+    - NVDA
+    - TSLA
+    - META
+    - NFLX
+
+# Technical Indicator Parameters
+indicators:
+  # RSI (Relative Strength Index)
+  rsi_period: 14
+  rsi_oversold: 30
+  rsi_overbought: 70
+  
+  # MACD (Moving Average Convergence Divergence)
+  macd_fast: 12
+  macd_slow: 26
+  macd_signal: 9
+  
+  # Bollinger Bands
+  bollinger_period: 20
+  bollinger_std: 2
+  
+  # Moving Averages
+  sma_fast: 20
+  sma_slow: 50
+  ema_period: 12
+
+# AI Engine Parameters
+ai_engine:
+  # Minimum confidence score to place a trade (0-1)
+  min_confidence: 0.6
+  
+  # Trend strength threshold
+  trend_threshold: 0.55
+  
+  # Number of historical periods to analyze
+  lookback_periods: 100
+
+# Risk Management
+risk_management:
+  # Use trailing stop-loss
+  use_trailing_stop: true
+  
+  # Trailing stop percentage
+  trailing_stop_percent: 1.5
+  
+  # Take profit percentage
+  take_profit_percent: 5.0
+  
+  # Maximum concurrent positions
+  max_positions: 5
+  
+  # Risk/Reward ratio minimum
+  min_risk_reward: 1.5
+
+# Backtesting Configuration
+backtesting:
+  # Start date for backtest
+  start_date: '2023-01-01'
+  
+  # End date for backtest
+  end_date: '2024-01-01'
+  
+  # Initial capital for backtest
+  initial_capital: 100000
+  
+  # Commission per trade
+  commission: 0.001  # 0.1%
+  
+  # Slippage per trade
+  slippage: 0.0005   # 0.05%
+
+# Market Data
+market_data:
+  # Data source: 'yfinance'
+  source: 'yfinance'
+  
+  # Interval: '1d', '1h', '15m', etc.
+  interval: '1d'
+  
+  # Timezone
+  timezone: 'US/Eastern'
+
+# Trading Hours (Market opens at 9:30 AM, closes at 4:00 PM EST)
+trading_hours:
+  start_hour: 9
+  start_minute: 30
+  end_hour: 16
+  end_minute: 0
+  timezone: 'US/Eastern'
+
+# Logging
+logging:
+  level: 'INFO'
+  file: 'logs/trading.log'
+  console: true
+
+# Dashboard
+dashboard:
+  port: 8501
+  host: 'localhost'
+  refresh_interval: 60  # seconds
+
+# Notification
+notifications:
+  enabled: true
+  email: false
+  telegram: false
